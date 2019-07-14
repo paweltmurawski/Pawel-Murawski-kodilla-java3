@@ -31,7 +31,7 @@ public class Item {
         return id;
     }
 
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 
@@ -41,7 +41,7 @@ public class Item {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    private void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -51,7 +51,7 @@ public class Item {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    private void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
@@ -61,7 +61,7 @@ public class Item {
         return value;
     }
 
-    public void setValue(BigDecimal value) {
+    private void setValue(BigDecimal value) {
         this.value = value;
     }
 

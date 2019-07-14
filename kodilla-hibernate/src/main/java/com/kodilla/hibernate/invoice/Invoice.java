@@ -33,11 +33,11 @@ public class Invoice {
 
     @NotNull
     @Column(name = "NUMBER")
-    private String getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    private void setNumber(String number) {
         this.number = number;
     }
 
