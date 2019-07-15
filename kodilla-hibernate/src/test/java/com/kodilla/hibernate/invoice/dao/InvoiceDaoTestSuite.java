@@ -16,6 +16,8 @@ import java.math.BigDecimal;
 public class InvoiceDaoTestSuite {
     @Autowired
     InvoiceDao invoiceDao;
+    @Autowired
+    ProductDao productDao;
 
     @Test
     public void testInvoiceDaoSave() {
@@ -40,6 +42,9 @@ public class InvoiceDaoTestSuite {
         firstInvoice.getItems().add(thirdItem);
 
         //When
+        productDao.save(firstProduct);
+        productDao.save(secondProduct);
+        productDao.save(thirdProduct);
         invoiceDao.save(firstInvoice);
         int id = firstInvoice.getId();
 
