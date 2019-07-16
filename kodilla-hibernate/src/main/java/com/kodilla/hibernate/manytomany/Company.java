@@ -7,7 +7,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.retrieveCompany",
-        query = "SELECT * FROM COMPANIES WHERE NAME LIKE 'Sof%'",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY LIKE ?1",
         resultClass = Company.class
 )
 
@@ -38,7 +38,7 @@ public class Company {
     }
 
     @NotNull
-    @Column(name = "COMPANY ")
+    @Column(name = "COMPANY")
     public String getName() {
         return name;
     }
