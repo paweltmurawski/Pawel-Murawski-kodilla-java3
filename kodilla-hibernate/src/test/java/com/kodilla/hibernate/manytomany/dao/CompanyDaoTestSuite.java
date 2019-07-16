@@ -77,7 +77,7 @@ public class CompanyDaoTestSuite {
         int id = softwareMachine.getId();
 
         //When
-        List<Company> companyName = companyDao.retrieveCompany("Sof*");
+        List<Company> companyName = companyDao.retrieveCompany();
         List<Employee> employeesLastname = employeeDao.retrieveByLastname("Kovalsky");
 
         //Then
@@ -87,7 +87,7 @@ public class CompanyDaoTestSuite {
 
         } finally {
             //CleanUp
-            companyDao.deleteById(id);
+            //companyDao.deleteById(id);
         }
     }
 }

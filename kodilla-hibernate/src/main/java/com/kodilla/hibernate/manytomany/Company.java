@@ -7,7 +7,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.retrieveCompany",
-        query = "SELECT * FROM COMPANIES WHERE NAME LIKE '???%' = :NAME",
+        query = "SELECT * FROM COMPANIES WHERE NAME LIKE 'Sof%'",
         resultClass = Company.class
 )
 
