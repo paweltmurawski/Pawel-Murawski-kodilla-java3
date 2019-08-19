@@ -1,3 +1,4 @@
+
 package com.kodilla.hibernate.manytomany.facade;
 
 import com.kodilla.hibernate.manytomany.Company;
@@ -19,29 +20,20 @@ public class QueryFacadeTest {
     private QueryFacade queryFacade;
 
     @Test
-    public void testFindCompany() {
+    public void testFindCompany() throws QueryResultException {
         //When
-        List<Company> result = queryFacade.findCompany("a");
+        List<Company> result = queryFacade.findCompany("b");
         //Then
-        try {
-            assertEquals("abc", result.get(0).getName());
-        } catch (QueryResultException e) {
-           //business logic
-        }
+        assertEquals("abc", result.get(0).getName());
     }
 
 
     @Test
-    public void testFindByLastname() {
+    public void testFindByLastname() throws QueryResultException {
         //When
         List<Employee> result = queryFacade.findByLastname("o");
         //Then
-            try {
-                assertEquals("Kovalsky", result.get(0).getLastname());
-            } finally {
-                //businness logic
-            }
-        }
+        assertEquals("Kovalsky", result.get(0).getLastname());
     }
-
 }
+

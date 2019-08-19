@@ -15,22 +15,23 @@ public final class QueryFacade {
     CompanyRepository companyRepository;
     @Autowired
     EmployeeRepository employeeRepository;
-    boolean wasError = true;
     private static final Logger LOGGER = LoggerFactory.getLogger(QueryFacade.class);
 
-
     public List<Company> findCompany(String query) throws QueryResultException {
-        try {
-            return companyRepository.findByCompany("%" + query + "%");
-        } finally {
-            if (wasError) {
-                LOGGER.error(QueryResultException.ERR_COMPANY_NOT_FOUND);
-                throw new QueryResultException(QueryResultException.ERR_COMPANY_NOT_FOUND);
-            }
+        List<Company> result = companyRepository.findByCompany("%" + query + "%");
+        if (result.isEmpty()) {
+            LOGGER.error(QueryResultException.ERR_COMPANY_NOT_FOUND);
+            throw new QueryResultException(QueryResultException.ERR_COMPANY_NOT_FOUND);
         }
+        return result;
     }
 
     public List<Employee> findByLastname(String query) throws QueryResultException {
-        return employeeRepository.findByLastname("%" + query + "%");
+        List<Employee> result = employeeRepository.findByLastname("%" + query + "%");
+        if (result.isEmpty()) {
+            LOGGER.error(QueryResultException.ERR_EMPLOYEE_NOT_FOUND);
+            throw new QueryResultException(QueryResultException.ERR_EMPLOYEE_NOT_FOUND);
+        }
+        return result;
     }
 }
