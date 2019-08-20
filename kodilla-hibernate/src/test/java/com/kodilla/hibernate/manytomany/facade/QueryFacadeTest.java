@@ -27,7 +27,6 @@ public class QueryFacadeTest {
         assertEquals("abc", result.get(0).getName());
     }
 
-
     @Test
     public void testFindByLastname() throws QueryResultException {
         //When
