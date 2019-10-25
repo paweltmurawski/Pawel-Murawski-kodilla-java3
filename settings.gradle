@@ -4,3 +4,5 @@ pluginManagement {
     }
 }
 rootProject.name = 'kodilla-course3'
+include 'kodilla-testing2'
+
