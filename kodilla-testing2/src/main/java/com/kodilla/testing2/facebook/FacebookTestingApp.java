@@ -13,7 +13,7 @@ public class FacebookTestingApp {
 
     public static void main(String[] args) {
         WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
-        driver.get("https://facebook.com");
+        driver.get("https://www.facebook.com");
 
         while (!driver.findElement(By.xpath(XPATH_DAY)).isDisplayed());
         WebElement daySearch = driver.findElement(By.xpath(XPATH_DAY));
